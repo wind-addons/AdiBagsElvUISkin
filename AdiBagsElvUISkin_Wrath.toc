@@ -1,0 +1,14 @@
+## Interface: 30400
+## Author: fang2hou
+## Version: 1.2
+## Title: AdiBags |cff1784d1ElvUI|r Skin
+## Title-zhCN: AdiBags |cff1784d1ElvUI|r 美化
+## Title-zhTW: AdiBags |cff1784d1ElvUI|r 美化
+## Notes: Make AdiBags more |cff1784d1ElvUI|r Style
+## Notes-zhCN: 使 AdiBags 更加 |cff1784d1ElvUI|r 风
+## Notes-zhTW: 使 AdiBags 更加 |cff1784d1ElvUI|r 風
+## RequiredDeps: ElvUI, AdiBags
+
+api.lua
+core.lua
+init.lua
