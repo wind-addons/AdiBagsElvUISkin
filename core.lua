@@ -125,6 +125,12 @@ function skin:ItemButton_OnCreate()
         E:RegisterCooldown(self.Cooldown, "bags")
     end
 
+    local questOverlay = self:CreateTexture(nil, "OVERLAY")
+    questOverlay:SetTexture(E.Media.Textures.BagQuestIcon)
+    questOverlay:SetTexCoord(0, 1, 0, 1)
+    questOverlay:SetAllPoints(self.Center)
+    questOverlay:Hide()
+
     local junkOverlay = self:CreateTexture(nil, "OVERLAY")
     junkOverlay:SetTexture(E.Media.Textures.White8x8)
     junkOverlay:SetVertexColor(0.5, 0.5, 0.5, 1)
@@ -149,8 +155,7 @@ function skin:ItemButton_OnCreate()
     if self.IconTexture and self.IconTexture:GetObjectType() == "Texture" then
         local setTexture = self.IconTexture.SetTexture
         self.IconTexture:SetTexCoord(unpack(E.TexCoords))
-        self.IconTexture.SetTexCoord = function()
-        end
+        self.IconTexture.SetTexCoord = E.noop
         hooksecurefunc(
             self.IconTexture,
             "SetTexture",
@@ -165,10 +170,8 @@ function skin:ItemButton_OnCreate()
     if self.IconBorder then
         self.IconBorder:SetTexture("")
         self.IconBorder:Hide()
-        self.IconBorder.Show = function()
-        end
-        self.IconBorder.SetTexture = function()
-        end
+        self.IconBorder.Show = E.noop
+        self.IconBorder.SetTexture = E.noop
 
         hooksecurefunc(
             self.IconBorder,
@@ -193,6 +196,27 @@ function skin:ItemButton_OnCreate()
                 junkOverlay:Hide()
             end
         )
+    end
+
+    if self.IconQuestTexture then
+        local isShown = self.IconQuestTexture:IsShown()
+        self.IconQuestTexture:SetTexture("")
+        self.IconQuestTexture:Hide()
+
+        self.IconQuestTexture.Show = function()
+            questOverlay:Show()
+            setBackdropBorderColor(self, 1, 0.8, 0, 1)
+        end
+        self.IconQuestTexture.Hide = function()
+            questOverlay:Hide()
+            setBackdropBorderColor(self, unpack(E.media.bordercolor))
+        end
+
+        if isShown then
+            self.IconQuestTexture:Show()
+        else
+            self.IconQuestTexture:Hide()
+        end
     end
 
     self.__adiBagsElvUISkin = true
