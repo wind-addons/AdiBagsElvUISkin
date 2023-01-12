@@ -229,6 +229,22 @@ function ns.reskin()
         return
     end
 
+    if
+        AB.db.profile["modules"] and
+            (AB.db.profile["modules"]["Masque"] == nil or AB.db.profile["modules"]["Masque"] == true)
+     then
+        AB.db.profile["modules"]["Masque"] = false
+
+        local locale = GetLocale()
+        if locale == "zhCN" then
+            print("|cffff8800AdiBags ElvUI 皮肤|r: 已自动禁用 AdiBags Masque 支持模块.")
+        elseif locale == "zhTW" then
+            print("|cffff8800AdiBags ElvUI 皮膚|r: 已自動禁用 AdiBags Masque 支持模組.")
+        else
+            print("|cffff8800AdiBags ElvUI Skin|r: Automatically disabled Masque module of AdiBags.")
+        end
+    end
+
     postHandleFrame(AB, "CreateBagSlotPanel", skin.AdiBags_CreateBagSlotPanel)
     hook("Container", "OnCreate", nil, skin.Container_OnCreate, false)
     hook("Container", "CreateModuleButton", nil, skin.Container_CreateModuleButton, false)
