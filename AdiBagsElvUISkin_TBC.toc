@@ -1,6 +1,6 @@
 ## Interface: 20504
 ## Author: fang2hou
-## Version: 1.3.4
+## Version: 1.3.5
 ## Title: AdiBags |cff1784d1ElvUI|r Skin
 ## Title-zhCN: AdiBags |cff1784d1ElvUI|r 美化
 ## Title-zhTW: AdiBags |cff1784d1ElvUI|r 美化
