@@ -80,6 +80,7 @@ function skin:Container_OnCreate()
     self.SetBackdropBorderColor = E.noop
 
     self.CloseButton.Text:Hide()
+    self.CloseButton.isSkinned = false
     S:HandleCloseButton(self.CloseButton)
 
     self.BagSlotButton:CreateBackdrop()
