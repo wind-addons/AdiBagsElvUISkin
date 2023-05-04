@@ -1,4 +1,4 @@
-## Interface: 100005
+## Interface: 100100
 ## Author: fang2hou
 ## Version: 1.3.5
 ## Title: AdiBags |cff1784d1ElvUI|r Skin
@@ -8,6 +8,7 @@
 ## Notes-zhCN: 使 AdiBags 更加 |cff1784d1ElvUI|r 风
 ## Notes-zhTW: 使 AdiBags 更加 |cff1784d1ElvUI|r 風
 ## RequiredDeps: ElvUI, AdiBags
+## IconTexture: Interface\Addons\AdiBagsElvUISkin\icon.png
 ## X-Curse-Project-ID: 714207
 ## X-Wago-ID: R4N2QWGL
 
