@@ -82,6 +82,7 @@ function skin:Container_OnCreate()
     self.CloseButton.Text:Hide()
     self.CloseButton.isSkinned = false
     S:HandleCloseButton(self.CloseButton)
+    self.CloseButton:SetHitRectInsets(1, 1, 2, 2)
 
     self.BagSlotButton:CreateBackdrop()
     self.BagSlotButton:GetNormalTexture():SetTexCoord(unpack(E.TexCoords))
