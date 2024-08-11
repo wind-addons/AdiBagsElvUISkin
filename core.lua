@@ -79,7 +79,6 @@ function skin:Container_OnCreate()
     self.SetBackdropColor = E.noop
     self.SetBackdropBorderColor = E.noop
 
-    self.CloseButton.Text:Hide()
     self.CloseButton.isSkinned = false
     S:HandleCloseButton(self.CloseButton)
     self.CloseButton:SetHitRectInsets(1, 1, 2, 2)
