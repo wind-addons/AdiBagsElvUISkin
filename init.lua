@@ -2,6 +2,8 @@ local ns = select(2, ...)
 
 ns.addon = CreateFrame("Frame")
 
+local IsAddOnLoaded = C_AddOns and C_AddOns.IsAddOnLoaded or IsAddOnLoaded
+
 local checkList = {
     adiBags = false,
     elvui = false
